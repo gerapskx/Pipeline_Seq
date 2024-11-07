@@ -34,6 +34,16 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 ```
+
+### Working data
+
+We will analyze the data from _Drosophila melanogaster_ under habanero pepper consumption. 
+Reference
+Lopez-Ortiz, C., Edwards, M., Natarajan, P., Pacheco-Valenciana, A., Nimmakayala, P., Adjeroh, D. A., ... & Reddy, U. K. (2022). Peppers in diet: Genome-wide transcriptome and metabolome changes in Drosophila melanogaster. International Journal of Molecular Sciences, 23(17), 9924.
+
+NCBI Bioproject #PRJNA860149
+https://www.ncbi.nlm.nih.gov/sra/PRJNA1177526
+
 # SRA Toolkit for public sequencing data
 
 The SRA Toolkit is a collection of tools and libraries for using data in the Sequence Read Archives of NCBI
