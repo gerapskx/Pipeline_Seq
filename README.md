@@ -56,21 +56,29 @@ The SRA Toolkit is a collection of tools and libraries for using data in the Seq
 ### Installation
 
 _linux_
-```sudo apt install sra-toolkit```
+```
+sudo apt install sra-toolkit
+```
 
-###Downloading data .sra data
+### Downloading data .sra data
 
-```prefetch SRRXXXXXXXXXXX```
+```
+prefetch SRRXXXXXXXXXXX
+```
 
 ### decompress .fastq files
 
-```fastq-dump --outdir fastq --gzip --skip-technical --readids --read-filter pass --dumpbase --split-3 --clip ~/ncbi/public/sra/SRRXXXX.sra```
+```
+fastq-dump --outdir fastq --gzip --skip-technical --readids --read-filter pass --dumpbase --split-3 --clip ~/ncbi/public/sra/SRRXXXX.sra
+```
 
 
 ## Looping for multiple samples
 
 ```Python3 Fastq_download.py```
 
+```
+```
 # Quality control of fastq files with FASTQC and Trimmomatic
 
 _installation_
