@@ -1,5 +1,5 @@
 
-# Pipeline_Seq
+# Pipeline Bulk RNA-Seq
 Step by Step Guide for NGS data from RNA-sequencing experiments
 
 Objectives
