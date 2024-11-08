@@ -22,6 +22,7 @@ https://apps.microsoft.com/detail/9pdxgncfsczv?hl=en-US&gl=US
 
 In **Turn Windows features on or off**, activate "Virtual Machine Platform" & "Windows Subsystem for Linux"
 
+Create a username and password. The password will not be shown while writing. DONT FORGET YOUR PASSWORD. 
 ### Miniconda for linux
 
 Follow the instructions found below in the terminal
