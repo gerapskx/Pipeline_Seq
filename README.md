@@ -10,7 +10,7 @@ Objectives
 3) **Mapping** FASTQ files using **_STAR_**
 4) Generate count matrix by **counting reads** with **_HT-seq_**
 5) Identify **Differential Expressed Genes** (DEGs) using **_DESeq2_**
-6) Visualize **gene Ontologies** and **pathways** enriched in DEGs
+6) Visualize **gene ontologies** and **pathways** enriched in DEGs
 
 # **Getting started**
 
