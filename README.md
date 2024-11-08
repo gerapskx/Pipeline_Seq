@@ -44,7 +44,8 @@ Lopez-Ortiz, C., Edwards, M., Natarajan, P., Pacheco-Valenciana, A., Nimmakayala
 
 NCBI Bioproject #PRJNA860149
 https://www.ncbi.nlm.nih.gov/sra/PRJNA1177526
-
+# LINUX
+-------------
 # SRA Toolkit for public sequencing data
 
 The SRA Toolkit is a collection of tools and libraries for using data in the Sequence Read Archives of NCBI
