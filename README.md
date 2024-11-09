@@ -165,6 +165,7 @@ fastqc samplename.fastq
 
 ``` multiqc path/ ```
 
+# Trimmomatic
 
 # Spliced Transcripts Alignment to a Reference (STAR)
 
@@ -261,7 +262,7 @@ https://htseq.readthedocs.io/en/release_0.11.1/count.html
 
 htseq-count -f bam -r pos -s no -t gene -i gene_id bamfile gtffile > outputfile
 
-### single samples
+### multiple samples
 
 -A sh file will iterate through or samples
 
@@ -292,6 +293,10 @@ done
 echo "htseq-count analysis completed for all samples."
 
 ```
+
+Run below command in the bam folder to automaticaly analyze all bam files
+
+``````
 
 # R
 -------------
