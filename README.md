@@ -175,6 +175,14 @@ https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STA
 
 _Once we have fastq files with high-quality reads only, we can proceed to map our reads_
 
+Drosophila updated genome
+
+https://ftp.ensembl.org/pub/release-113/fasta/drosophila_melanogaster/dna/
+
+Drosophila updated Gene transfer format
+
+https://ftp.ensembl.org/pub/release-113/gtf/drosophila_melanogaster/
+
 ### installation
 
 ```sudo apt install rna-star```
