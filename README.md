@@ -51,14 +51,14 @@ https://www.ncbi.nlm.nih.gov/sra/PRJNA1177526
 The SRA Toolkit is a collection of tools and libraries for using data in the Sequence Read Archives of NCBI
 
 
-## Single samples
-
 ### Installation
 
 _linux_
 ```
 sudo apt install sra-toolkit
 ```
+
+## Single samples
 
 ### Downloading data .sra data
 
@@ -75,18 +75,207 @@ fastq-dump --outdir fastq --gzip --skip-technical --readids --read-filter pass -
 
 ## Looping for multiple samples
 
+-a python script will iterate through our samples (file is attached in this repository)
+
+```
+#!/usr/bin/env python3
+
+import os
+from glob import glob
+import subprocess
+
+# initialization
+work_dir = './pathworkingdirectory'
+samples = {
+    'Cpepo_200_2_S11_R1_001.fastq': 'SRR31111296',
+'Cpepo_200_2_S11_R1_001.fastq': 'SRR31111296',
+'Cpepo_200_2_S11_R1_001.fastq': 'SRR31111296',
+'Cpepo_200_2_S11_R1_001.fastq': 'SRR31111296',
+'Cpepo_200_2_S11_R1_001.fastq': 'SRR31111296',
+'Cpepo_200_2_S11_R1_001.fastq': 'SRR31111296',
+}
+
+
+# downloading each given file
+for sample_id in samples:
+    print('Currently downloading: ' + samples[sample_id])
+
+    # downloading/converting the files
+    cmd_prefetch = 'prefetch --output-directory {:s} --progress {:s}'.format(work_dir, samples[sample_id])
+    print('\trunning: ' + cmd_prefetch)
+    subprocess.call(cmd_prefetch, shell=True)
+
+    cmd_fastqdump = 'fastq-dump --outdir {:s} --skip-technical --readids '.format(work_dir) + \
+                    '--read-filter pass --dumpbase --split-3 --clip ' + \
+                    '{:s}/{:s}/{:s}.sra'.format(work_dir, samples[sample_id], samples[sample_id])
+    print('\trunning: ' + cmd_fastqdump)
+    subprocess.call(cmd_fastqdump, shell=True)
+
+    # compressing the fastqs
+    for fq_name in glob('{:s}/{:s}*.fastq'.format(work_dir, samples[sample_id])):
+        cmd_compress = 'gzip -c {:s} > {:s}/{:s}_{:s}.gz'.format(fq_name, work_dir, sample_id, os.path.basename(fq_name))
+        print('\trunning: ' + cmd_compress)
+        subprocess.call(cmd_compress, shell=True)
+        os.remove(fq_name)
+
+    # clean up
+    cmd_rmdir = 'rm -r {:s}/{:s}'.format(work_dir, samples[sample_id])
+    print('\trunning: ' + cmd_rmdir)
+    subprocess.call(cmd_rmdir, shell=True)
+
+```
+
+
+Run below command in the fastq folder automatticaly download, decompress and remove .sra data
+
 ```Python3 Fastq_download.py```
 
-```
-```
+
 # Quality control of fastq files with FASTQC and Trimmomatic
 
-_installation_
+**_installation_**
 
 ```sudo apt install fastqc```
 
+```pip install --upgrade --force-reinstall git+https://github.com/MultiQC/MultiQC.git```
 
-###
+```conda install bioconda::trimmomatic```
+
+
+## fastqc report single sample
+
+fastqc samplename.fastq
+
+## Simultaneous fastqc for fastq.gz
+
+```fastqc -t 24 *.fastq.gz```
+
+```fastqc *.fastq.gz```
+
+### Merge Reports
+
+``` multiqc path/ ```
+
+
+
+
+# Spliced Transcripts Alignment to a Reference (STAR)
+
+Mapping of large sets of high-throughput sequencing reads to a reference genome
+
+Manual
+
+chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf 
+
+### installation
+
+```sudo apt install rna-star```
+
+## Genome index 
+
+-Consider the genome & gtf file versions
+-Consider the length of your reads
+-Consider the #cores to be used (Task manager -> Performance -> Cores)
+
+```
+STAR --runMode genomeGenerate --genomeDir path --genomeFastaFiles path/#########dna.toplevel.fa --sjdbGTFfile path/######.gtf --runThreadN #cores --sjdbOverhang #readlength-1
+```
+
+## Mapping reads into bam format
+
+### Single samples
+
+```
+STAR --runThreadN #cores --genomeDir path_genomeindex_folder --readFilesIn path/Forward.fastq.gz path/Reverse.fastq.gz --outSAMtype BAM SortedByCoordinate --outFileNamePrefix /pathdesiredfolder --readFilesCommand zcat
+```
+### Multiple samples
+
+-A sh file with iterate through or samples
+-Our F and Reverse reads should have the same name, but they should be labeled as _1 for F and _2 for R
+-The file is 
+```
+#!/bin/bash
+
+# Define the genome directory
+genomedir="path/folder"
+
+# Get a list of unique sample prefixes
+
+mylist="$(ls *.fq.gz | perl -pe 's/^(.*?_)(\d)\.fq\.gz$/$1/' | uniq)"
+
+# Loop through each sample prefix
+for prefix in $mylist; do
+  pairedend1=`ls ${prefix}1.fq.gz`
+  pairedend2=`ls ${prefix}2.fq.gz`
+
+if [ -f "$pairedend1" ] && [ -f "$pairedend2" ]; then
+    echo "Aligning sample: $prefix"
+else
+    echo "Warning: One or both files for sample $prefix do not exist."
+    echo "Missing files: $pairedend1, $pairedend2"
+    continue  # Skip to the next sample
+fi
+
+    # Align reads using STAR
+    STAR \
+        --runThreadN 8 \
+        --genomeDir "$genomedir"  \
+        --readFilesIn $pairedend1 $pairedend2 \
+        --readFilesCommand zcat \
+        --outFileNamePrefix bams/"$prefix" \
+        --outSAMtype BAM SortedByCoordinate \
+
+echo 
+'Alignment completed for:' $prefix 
+
+done
+
+```
+
+## Counting reads in features with HTseq, htseq-count
+
+Manual
+https://htseq.readthedocs.io/en/release_0.11.1/count.html
+
+### installation
+
+```sudo apt install python3-htseq```
+
+### single samples
+
+htseq-count -f bam -r pos -s no -t gene -i gene_id bamfile gtffile > outputfile
+
+### single samples
+
+-A sh file will iterate through or samples
+
+```
+BAM_DIR="/home/gerardo/DrosPepper"
+# Define the GTF file
+GTF_FILE="/home/gerardo/Drosophila_melanogaster.BDGP6.46.113.gtf/Drosophila_melanogaster.BDGP6.46.113.gtf"
+
+# Loop through each BAM file in the directory
+for BAM_FILE in "$BAM_DIR"/*.bam; do
+  # Define the output file name by replacing .bam with _counts.txt
+  OUTPUT_FILE="${BAM_FILE%.bam}_counts.txt"
+  
+  # Print the BAM file being processed
+  echo "Processing $BAM_FILE..."
+  
+  # Run htseq-count
+  htseq-count -f bam -r pos -s no -t gene -i gene_id "$BAM_FILE" "$GTF_FILE" > "$OUTPUT_FILE"
+  
+  # Check if htseq-count was successful
+  if [ $? -eq 0 ]; then
+    echo "Counts for $BAM_FILE written to $OUTPUT_FILE"
+  else
+    echo "Error processing $BAM_FILE"
+  fi
+done
+
+echo "htseq-count analysis completed for all samples."
+
+```
 
 # R
 -------------
