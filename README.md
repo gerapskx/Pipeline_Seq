@@ -6,11 +6,11 @@ Objectives
 ------------
 
 1) **Finding and downloading raw sequencing data** from NCBI using **SRA tools**
-2) Evaluate **quality of reads** with **_FASTQC_** and do quality control with **_Trimmomatic_**
-3) **Mapping** FASTQ files using **_STAR_**
-4) Generate count matrix by **counting reads** with **_HT-seq_**
-5) Identify **Differential Expressed Genes** (DEGs) using **_DESeq2_**
-6) Visualize **gene ontologies** and **pathways** enriched in DEGs
+2) Evaluate **quality of reads** with **FASTQC** and do quality control with **Trimmomatic**
+3) **Mapping** FASTQ files using **STAR**
+4) Generate count matrix by **counting reads** with **HT-seq**
+5) Identify **Differential Expressed Genes** (DEGs) using **DESeq2** + visualization
+6) Understand **gene ontologies** and **pathways** enriched in DEGs + visualization
 
 # **Getting started**
 
