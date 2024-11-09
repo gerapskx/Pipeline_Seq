@@ -20,9 +20,12 @@ In the **microsoft store**, download **Ubuntu**
 
 https://apps.microsoft.com/detail/9pdxgncfsczv?hl=en-US&gl=US
 
-In **Turn Windows features on or off**, activate "Virtual Machine Platform" & "Windows Subsystem for Linux"
+In **Turn Windows features on or off**, activate "Windows Subsystem for Linux"
 
-Create a username and password. The password will not be shown while writing. DONT FORGET YOUR PASSWORD. 
+Create a username and password. The password will not be shown while writing. 
+
+**DONT FORGET YOUR PASSWORD.**
+
 ### Miniconda for linux
 
 Follow the instructions found below in the terminal
@@ -34,7 +37,20 @@ mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
+
 ```
+
+```
+source miniconda3/bin/activate
+
+nano .bashrc
+
+sudo apt update
+
+conda update conda
+
+```
+
 
 ### Working data
 
@@ -45,7 +61,7 @@ Reference
 Lopez-Ortiz, C., Edwards, M., Natarajan, P., Pacheco-Valenciana, A., Nimmakayala, P., Adjeroh, D. A., ... & Reddy, U. K. (2022). Peppers in diet: Genome-wide transcriptome and metabolome changes in Drosophila melanogaster. International Journal of Molecular Sciences, 23(17), 9924.
 
 NCBI Bioproject #PRJNA860149
-https://www.ncbi.nlm.nih.gov/sra/PRJNA1177526
+https://www.ncbi.nlm.nih.gov/sra/PRJNA860149
 # LINUX
 -------------
 # SRA Toolkit for public sequencing data
