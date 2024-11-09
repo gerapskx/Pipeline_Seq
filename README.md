@@ -167,6 +167,13 @@ fastqc samplename.fastq
 
 # Trimmomatic
 
+## single samples
+
+```trimmomatic PE input_forward.fq.gz input_reverse.fq.gz output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36```
+
+## multiple samples
+
+
 # Spliced Transcripts Alignment to a Reference (STAR)
 
 Mapping of large sets of high-throughput sequencing reads to a reference genome
