@@ -39,7 +39,9 @@ rm ~/miniconda3/miniconda.sh
 ### Working data
 
 We will analyze the data from _Drosophila melanogaster_ under habanero pepper consumption. 
+
 Reference
+
 Lopez-Ortiz, C., Edwards, M., Natarajan, P., Pacheco-Valenciana, A., Nimmakayala, P., Adjeroh, D. A., ... & Reddy, U. K. (2022). Peppers in diet: Genome-wide transcriptome and metabolome changes in Drosophila melanogaster. International Journal of Molecular Sciences, 23(17), 9924.
 
 NCBI Bioproject #PRJNA860149
