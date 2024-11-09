@@ -134,9 +134,19 @@ Run below command in the fastq folder automatticaly download, decompress and rem
 
 **_installation_**
 
+**fastqc**
+https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+
 ```sudo apt install fastqc```
 
+**multiqc**
+https://github.com/MultiQC/MultiQC
+
 ```pip install --upgrade --force-reinstall git+https://github.com/MultiQC/MultiQC.git```
+
+**Trimmomatic**
+
+"http://www.usadellab.org/cms/?page=trimmomatic"
 
 ```conda install bioconda::trimmomatic```
 
@@ -156,14 +166,14 @@ fastqc samplename.fastq
 ``` multiqc path/ ```
 
 
-
-
 # Spliced Transcripts Alignment to a Reference (STAR)
 
 Mapping of large sets of high-throughput sequencing reads to a reference genome
 
 **Manual**
 https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf  
+
+_Once we have fastq files with high-quality reads only, we can proceed to map our reads_
 
 ### installation
 
