@@ -53,7 +53,6 @@ The SRA Toolkit is a collection of tools and libraries for using data in the Seq
 
 ### Installation
 
-_linux_
 ```
 sudo apt install sra-toolkit
 ```
