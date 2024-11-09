@@ -1,6 +1,6 @@
 
 # Pipeline Bulk RNA-Seq
-Step by Step Guide for NGS data from RNA-sequencing experiments
+Step by Step Guide for NGS data from bulk RNA-sequencing experiments
 
 Objectives
 ------------
