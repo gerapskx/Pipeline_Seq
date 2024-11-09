@@ -162,9 +162,8 @@ fastqc samplename.fastq
 
 Mapping of large sets of high-throughput sequencing reads to a reference genome
 
-Manual
-
-chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf 
+**Manual**
+https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf  
 
 ### installation
 
@@ -233,7 +232,7 @@ done
 
 ## Counting reads in features with HTseq, htseq-count
 
-Manual
+**Manual**
 https://htseq.readthedocs.io/en/release_0.11.1/count.html
 
 ### installation
