@@ -291,6 +291,9 @@ htseq-count -f bam -r pos -s no -t gene -i gene_id bamfile gtffile > outputfile
 
 -A sh file will iterate through or samples
 
+
+Run below command in the bam folder to automaticaly analyze all bam files
+
 ```
 BAM_DIR="/home/gerardo/DrosPepper"
 # Define the GTF file
@@ -318,10 +321,6 @@ done
 echo "htseq-count analysis completed for all samples."
 
 ```
-
-Run below command in the bam folder to automaticaly analyze all bam files
-
-``````
 
 # R
 -------------
