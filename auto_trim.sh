@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Shell script to automate trimmomatic for multiple samples
-# Author = Vijay Lakhujani
-# Date = 20 June 2017
 
 # Usage
 # This script automates running trimmomatic for multiple PE data.
