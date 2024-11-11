@@ -161,8 +161,10 @@ https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 https://github.com/MultiQC/MultiQC
 
 ```
-conda install multiqc
 pip install multiqc
+
+###developer
+
 pip install --upgrade --force-reinstall git+https://github.com/MultiQC/MultiQC.git```
 ```
 
