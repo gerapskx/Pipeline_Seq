@@ -94,6 +94,8 @@ fastq-dump --outdir fastq --gzip --skip-technical --readids --read-filter pass -
 
 -a python script will iterate through our samples (file is attached in this repository)
 
+wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/Fastq_download.py
+
 ```
 #!/usr/bin/env python3
 
@@ -200,6 +202,8 @@ fastqc samplename.fastq
 
 sudo apt install --reinstall coreutils
 
+wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/auto_trim.sh
+
 ```chmod +x auto_trim.sh```
 
 ```source auto_trim.sh *.fastq.gz```
@@ -246,7 +250,10 @@ STAR --runThreadN #cores --genomeDir path_genomeindex_folder --readFilesIn path/
 
 -A sh file with iterate through or samples
 -Our F and Reverse reads should have the same name, but they should be labeled as _1 for F and _2 for R
--The file is 
+-**Modify genomedir folder**
+
+wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/RNAstar.sh
+
 ```
 #!/bin/bash
 
@@ -286,6 +293,10 @@ done
 
 ```
 
+in working folder
+
+```sh RNAstar.sh ```
+
 ## Counting reads in features with HTseq, htseq-count
 
 **Manual**
@@ -303,6 +314,7 @@ htseq-count -f bam -r pos -s no -t gene -i gene_id bamfile gtffile > outputfile
 
 -A sh file will iterate through or samples
 
+wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/ht-seqrunDros.sh
 
 Run below command in the bam folder to automaticaly analyze all bam files
 
@@ -333,6 +345,8 @@ done
 echo "htseq-count analysis completed for all samples."
 
 ```
+
+
 
 # R
 -------------
