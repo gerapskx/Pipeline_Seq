@@ -192,7 +192,6 @@ fastqc samplename.fastq
 # Trimmomatic
 
 
-
 ## single samples
 
 ```trimmomatic PE input_forward.fq.gz input_reverse.fq.gz output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36```
@@ -203,7 +202,7 @@ sudo apt install --reinstall coreutils
 
 ```chmod +x auto_trim.sh```
 
-```sh auto_trim.sh```
+```source auto_trim.sh *.fastq.gz```
 
 # Spliced Transcripts Alignment to a Reference (STAR)
 
