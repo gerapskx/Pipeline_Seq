@@ -314,10 +314,10 @@ htseq-count -f bam -r pos -s no -t gene -i gene_id bamfile gtffile > outputfile
 
 -A sh file will iterate through or samples
 
-wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/ht-seqrunDros.sh
+wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/main/ht-seqrunDros.sh
 
 Run below command in the bam folder to automaticaly analyze all bam files
-
+**Change bam_dir & gtf file directory**
 ```
 BAM_DIR="/home/gerardo/DrosPepper"
 # Define the GTF file
