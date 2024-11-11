@@ -353,6 +353,114 @@ echo "htseq-count analysis completed for all samples."
 
 
 
+```
+# Load necessary libraries
+library(DESeq2)
+library(ggplot2)
+library(pheatmap)
+library(GOplot)
+library(topGO)
+library(clusterProfiler)
+library(org.Dm.eg.db)  # Replace 'org.Dm.eg.db' with the correct organism package (e.g., org.Hs.eg.db for human)
+
+# 1. Import Count Data
+# Set up directory for count files or provide file paths
+directory <- "path_to_your_count_files"
+sampleFiles <- list.files(directory, full.names = TRUE)
+sampleNames <- gsub(".txt$", "", basename(sampleFiles))
+
+# Sample information, adjust according to your design (e.g., condition)
+sampleInfo <- data.frame(row.names = sampleNames,
+                         condition = c("control", "treated"))  # Edit as appropriate
+
+# Read counts into a DESeqDataSet
+countData <- lapply(sampleFiles, function(file) {
+  read.table(file, header = TRUE, row.names = 1)
+})
+countData <- do.call(cbind, countData)
+dds <- DESeqDataSetFromMatrix(countData = countData, colData = sampleInfo, design = ~ condition)
+
+# 2. Preprocessing & Normalization
+dds <- DESeq(dds)
+dds <- estimateSizeFactors(dds)
+vsd <- vst(dds, blind = FALSE)  # Variance-stabilized transformation for visualizations
+
+# 3. PCA Analysis
+# Perform PCA on VSD
+pcaData <- plotPCA(vsd, intgroup = "condition", returnData = TRUE)
+percentVar <- round(100 * attr(pcaData, "percentVar"))
+
+# Plot PCA
+pca_plot <- ggplot(pcaData, aes(PC1, PC2, color = condition)) +
+  geom_point(size = 3) +
+  xlab(paste0("PC1: ", percentVar[1], "% variance")) +
+  ylab(paste0("PC2: ", percentVar[2], "% variance")) +
+  theme_minimal()
+print(pca_plot)
+
+# 4. Differential Expression Analysis
+res <- results(dds, contrast = c("condition", "treated", "control"))
+res <- res[order(res$padj, na.last = NA), ]
+
+# Filter significant DEGs (adjust as needed)
+significant_DEGs <- subset(res, padj < 0.05 & abs(log2FoldChange) > 1)
+gene_list <- rownames(significant_DEGs)
+
+# 5. Volcano Plot
+res$significant <- ifelse(res$padj < 0.05 & abs(res$log2FoldChange) > 1, "Significant", "Not Significant")
+volcano <- ggplot(res, aes(x = log2FoldChange, y = -log10(padj), color = significant)) +
+  geom_point() +
+  scale_color_manual(values = c("grey", "red")) +
+  labs(x = "Log2 Fold Change", y = "-Log10 Adjusted P-value") +
+  theme_minimal()
+print(volcano)
+
+# 6. Heatmap of Top Differentially Expressed Genes
+# Select top genes for heatmap (e.g., top 50 by adjusted p-value)
+topGenes <- head(order(res$padj), 50)
+pheatmap(assay(vsd)[topGenes, ], scale = "row", annotation_col = sampleInfo)
+
+# 7. GO Enrichment Analysis with topGO
+# Prepare gene list for topGO analysis
+gene_universe <- rownames(res)
+geneList <- factor(as.integer(gene_universe %in% gene_list))
+names(geneList) <- gene_universe
+
+GOdata <- new("topGOdata", ontology = "BP", allGenes = geneList, 
+              geneSel = function(x) x == 1, 
+              nodeSize = 10, 
+              annot = annFUN.org, mapping = "org.Dm.eg.db", ID = "symbol")  # Replace with correct org DB
+
+resultTopGO <- runTest(GOdata, algorithm = "classic", statistic = "fisher")
+allGO <- GenTable(GOdata, classicFisher = resultTopGO, orderBy = "classicFisher", topNodes = 10)
+
+# 8. GO and KEGG Enrichment Analysis with clusterProfiler
+# Convert to Entrez IDs for clusterProfiler (adjust depending on organism database)
+entrez_ids <- bitr(gene_list, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = org.Dm.eg.db)$ENTREZID  # Adjust for organism
+
+# GO Enrichment
+go_enrich <- enrichGO(gene = entrez_ids, OrgDb = org.Dm.eg.db, ont = "BP", 
+                      pAdjustMethod = "BH", pvalueCutoff = 0.05, readable = TRUE)
+dotplot(go_enrich, showCategory = 10)  # Top 10 enriched terms
+
+# KEGG Pathway Enrichment
+kegg_enrich <- enrichKEGG(gene = entrez_ids, organism = 'dme', pAdjustMethod = "BH", pvalueCutoff = 0.05)  # Use correct organism code
+dotplot(kegg_enrich, showCategory = 10)  # Top 10 enriched pathways
+
+# 9. Prepare Data for GOplot
+go_data <- as.data.frame(go_enrich)  # Convert GO enrichment results to a data frame for GOplot
+de_data <- data.frame(ID = rownames(res), logFC = res$log2FoldChange, adj.P.Val = res$padj)
+
+circ <- circle_dat(go_data, de_data)
+GOChord(circ, limit = c(-2, 2))
+
+# 10. Save Plots
+# Save PCA plot
+ggsave("pca_plot.png", pca_plot, width = 8, height = 6)
+# Save volcano plot, heatmap, and GOplot as needed
+
+```
+
 
 
 
