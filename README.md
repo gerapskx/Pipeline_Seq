@@ -157,7 +157,7 @@ Run below command in the fastq folder automatticaly download, decompress and rem
 **fastqc**
 https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
-```conda install bioconda::trimmomatic```
+```sudo apt install fastqc```
 
 **multiqc**
 https://github.com/MultiQC/MultiQC
