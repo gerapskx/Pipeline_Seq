@@ -164,6 +164,7 @@ https://github.com/MultiQC/MultiQC
 conda install multiqc
 pip install multiqc
 pip install --upgrade --force-reinstall git+https://github.com/MultiQC/MultiQC.git```
+```
 
 **Trimmomatic**
 
