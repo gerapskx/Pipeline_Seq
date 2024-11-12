@@ -157,7 +157,7 @@ Run below command in the fastq folder automatticaly download, decompress and rem
 **fastqc**
 https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
-```sudo apt install fastqc```
+```conda install bioconda::fastqc```
 
 **multiqc**
 https://github.com/MultiQC/MultiQC
@@ -202,7 +202,7 @@ fastqc samplename.fastq
 
 sudo apt install --reinstall coreutils
 
-wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/auto_trim.sh
+wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/main/auto_trim.sh
 
 ```chmod +x auto_trim.sh```
 
