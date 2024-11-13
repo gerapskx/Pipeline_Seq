@@ -204,6 +204,8 @@ sudo apt install --reinstall coreutils
 
 wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/main/auto_trim.sh
 
+wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/main/TruSeq3-PE.fa
+
 ```chmod +x auto_trim.sh```
 
 ```source auto_trim.sh *.fastq.gz```
