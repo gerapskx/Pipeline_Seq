@@ -356,87 +356,140 @@ echo "htseq-count analysis completed for all samples."
 
 
 ```
-# Load necessary libraries
+
+install.packages("BiocManager")
+BiocManager::install("topGO")
+BiocManager::install("DESeq2")
+BiocManager::install("clusterProfiler")
+install.packages("ggplot2")
+install.packages("pheatmap")
+install.packages("GOplot")
+install.packages("tidyverse")
+install.packages("readxl")
+install.packages("writexl")
+install.packages(c("csv", "csvread"))
+BiocManager::install("org.Dm.eg.db")
+
+
+library(BiocManager)
 library(DESeq2)
 library(ggplot2)
 library(pheatmap)
 library(GOplot)
 library(topGO)
 library(clusterProfiler)
-library(org.Dm.eg.db)  # Replace 'org.Dm.eg.db' with the correct organism package (e.g., org.Hs.eg.db for human)
+library(org.Dm.eg.db)
 
-# 1. Import Count Data
-# Set up directory for count files or provide file paths
-directory <- "path_to_your_count_files"
+
+#Importing data
+directory <- "E:/DrosPepper/htseq"
 sampleFiles <- list.files(directory, full.names = TRUE)
 sampleNames <- gsub(".txt$", "", basename(sampleFiles))
 
-# Sample information, adjust according to your design (e.g., condition)
+
+#Sample information
 sampleInfo <- data.frame(row.names = sampleNames,
-                         condition = c("control", "treated"))  # Edit as appropriate
+                         condition = c("control",
+                                       "control",
+                                       "control",
+                                       "treated",
+                                       "treated",
+                                       "treated"
+                                       ))  
 
 # Read counts into a DESeqDataSet
 countData <- lapply(sampleFiles, function(file) {
   read.table(file, header = TRUE, row.names = 1)
 })
+
+countData <- lapply(sampleFiles, function(file) {
+  # Read the file and ensure it's a data frame with row names (genes) and counts (columns)
+  data <- read.table(file, header = TRUE, row.names = 1)
+  
+  # Check the format of the file and if the data looks correct
+  if (ncol(data) != 1) {
+    stop(paste("Unexpected number of columns in file:", file))
+  }
+  
+  return(data)
+})
+  
 countData <- do.call(cbind, countData)
-dds <- DESeqDataSetFromMatrix(countData = countData, colData = sampleInfo, design = ~ condition)
 
-# 2. Preprocessing & Normalization
+
+colnames(countData) <- sampleNames
+
+countData <- countData[1:(nrow(countData) - 5), ]
+
+dds <- DESeqDataSetFromMatrix(countData, sampleInfo, design = ~ condition)
+
 dds <- DESeq(dds)
-dds <- estimateSizeFactors(dds)
-vsd <- vst(dds, blind = FALSE)  # Variance-stabilized transformation for visualizations
 
-# 3. PCA Analysis
-# Perform PCA on VSD
-pcaData <- plotPCA(vsd, intgroup = "condition", returnData = TRUE)
-percentVar <- round(100 * attr(pcaData, "percentVar"))
+resultsNames(dds)
 
-# Plot PCA
-pca_plot <- ggplot(pcaData, aes(PC1, PC2, color = condition)) +
-  geom_point(size = 3) +
-  xlab(paste0("PC1: ", percentVar[1], "% variance")) +
-  ylab(paste0("PC2: ", percentVar[2], "% variance")) +
-  theme_minimal()
-print(pca_plot)
+###Pepper_Effects
 
-# 4. Differential Expression Analysis
-res <- results(dds, contrast = c("condition", "treated", "control"))
-res <- res[order(res$padj, na.last = NA), ]
+Pepper_effects <- results(dds, contrast = c("condition", "treated", "control"), )
 
-# Filter significant DEGs (adjust as needed)
-significant_DEGs <- subset(res, padj < 0.05 & abs(log2FoldChange) > 1)
-gene_list <- rownames(significant_DEGs)
+Pepper_effects_filtered <- subset(Pepper_effects, padj < 0.05 & log2FoldChange > 1 | log2FoldChange < -1)
 
-# 5. Volcano Plot
-res$significant <- ifelse(res$padj < 0.05 & abs(res$log2FoldChange) > 1, "Significant", "Not Significant")
-volcano <- ggplot(res, aes(x = log2FoldChange, y = -log10(padj), color = significant)) +
-  geom_point() +
-  scale_color_manual(values = c("grey", "red")) +
-  labs(x = "Log2 Fold Change", y = "-Log10 Adjusted P-value") +
-  theme_minimal()
-print(volcano)
+
+Pepper_effects_filtered <- Pepper_effects_filtered[!is.na(Pepper_effects_filtered$padj), ]
+
+summary(Pepper_effects_filtered)
+
+annotated_Pepper_effects_filtered <- as.data.frame(Pepper_effects_filtered)
+
+annotated_Pepper_effects_filtered$gene_name <- mapIds(org.Dm.eg.db, 
+                                                                   keys = rownames(annotated_Pepper_effects_filtered), 
+                                                                   column = "SYMBOL", 
+                                                                   keytype = "ENSEMBL", 
+                                                                   multiVals = "first")
+
+annotated_Pepper_effects_filtered$entrez_ids <- mapIds(org.Dm.eg.db,
+                                                                    keys = rownames(annotated_Pepper_effects_filtered),
+                                                                    column = "ENTREZID",
+                                                                    keytype = "ENSEMBL",
+                                                                    multiVals = "first")
+
+write.csv(annotated_Pepper_effects_filtered, file="annotated_Pepper_effects_filtered.csv")
+
+
+#########################################################################################################
+
 
 # 6. Heatmap of Top Differentially Expressed Genes
 # Select top genes for heatmap (e.g., top 50 by adjusted p-value)
 topGenes <- head(order(res$padj), 50)
-pheatmap(assay(vsd)[topGenes, ], scale = "row", annotation_col = sampleInfo)
+
+
+assay(vsd)[is.na(assay(vsd)) | is.infinite(assay(vsd))] <- 0
+topGenes <- head(order(rowMeans(assay(vsd)), decreasing = TRUE), 20)
+
+
+pheatmap (assay(vsd)[topGenes, ], scale = "row", annotation_col = sampleInfo)
 
 # 7. GO Enrichment Analysis with topGO
 # Prepare gene list for topGO analysis
 gene_universe <- rownames(res)
 geneList <- factor(as.integer(gene_universe %in% gene_list))
+
 names(geneList) <- gene_universe
 
-GOdata <- new("topGOdata", ontology = "BP", allGenes = geneList, 
+gene_universe
+
+
+GOdata <- new(geneList, ontology = "BP", allGenes = geneList, 
               geneSel = function(x) x == 1, 
               nodeSize = 10, 
-              annot = annFUN.org, mapping = "org.Dm.eg.db", ID = "symbol")  # Replace with correct org DB
+              annot = annFUN.org, mapping = "org.Dm.eg.db", ID = "FLYBASE")  # Replace with correct org DB
 
 resultTopGO <- runTest(GOdata, algorithm = "classic", statistic = "fisher")
 allGO <- GenTable(GOdata, classicFisher = resultTopGO, orderBy = "classicFisher", topNodes = 10)
 
 # 8. GO and KEGG Enrichment Analysis with clusterProfiler
+
+
 # Convert to Entrez IDs for clusterProfiler (adjust depending on organism database)
 entrez_ids <- bitr(gene_list, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = org.Dm.eg.db)$ENTREZID  # Adjust for organism
 
@@ -444,6 +497,33 @@ entrez_ids <- bitr(gene_list, fromType = "SYMBOL", toType = "ENTREZID", OrgDb = 
 go_enrich <- enrichGO(gene = entrez_ids, OrgDb = org.Dm.eg.db, ont = "BP", 
                       pAdjustMethod = "BH", pvalueCutoff = 0.05, readable = TRUE)
 dotplot(go_enrich, showCategory = 10)  # Top 10 enriched terms
+
+##################################################################################################
+
+
+go_enrich_pepper <- enrichGO(gene = annotated_Pepper_effects_filtered$entrez_ids,
+                           OrgDb = org.Dm.eg.db,
+                           keyType = "ENTREZID",
+                           ont = "BP", # Biological Process
+                           pAdjustMethod = "BH",
+                           pvalueCutoff = 0.05,
+                           qvalueCutoff = 0.2,
+                           readable = TRUE)
+go_results <- as.data.frame(go_enrich_pepper)
+
+de_data <- data.frame(ID=annotated_Pepper_effects_filtered$gene_name, 
+                      logFC = annotated_Pepper_effects_filtered$log2FoldChange, 
+                      padj = annotated_Pepper_effects_filtered$padj)
+
+annotated_Pepper_effects_filtered$log2FoldChange
+
+circ <- circle_dat(terms = go_results, genes = de_data)
+
+
+
+##########################################################################################################
+
+
 
 # KEGG Pathway Enrichment
 kegg_enrich <- enrichKEGG(gene = entrez_ids, organism = 'dme', pAdjustMethod = "BH", pvalueCutoff = 0.05)  # Use correct organism code
