@@ -347,7 +347,7 @@ done
 echo "htseq-count analysis completed for all samples."
 
 ```
-## Merge the .txt files, strategy #1
+### Merge the .txt files, strategy #1
 
 wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/main/matrix.sh
 
@@ -368,6 +368,7 @@ paste genes.txt *clean.txt > Dros_matrix.txt
 
 
 ```
+###################Tools to import/install########################################
 
 install.packages("BiocManager")
 BiocManager::install("topGO")
@@ -393,7 +394,8 @@ library(clusterProfiler)
 library(org.Dm.eg.db)
 
 
-#Importing data
+################Importing data and merging .txt files, strategy 2
+
 directory <- "E:/DrosPepper/htseq"
 sampleFiles <- list.files(directory, full.names = TRUE)
 sampleNames <- gsub(".txt$", "", basename(sampleFiles))
@@ -409,7 +411,6 @@ sampleInfo <- data.frame(row.names = sampleNames,
                                        "treated"
                                        ))  
 
-# Read counts into a DESeqDataSet
 countData <- lapply(sampleFiles, function(file) {
   read.table(file, header = TRUE, row.names = 1)
 })
@@ -432,6 +433,10 @@ countData <- do.call(cbind, countData)
 colnames(countData) <- sampleNames
 
 countData <- countData[1:(nrow(countData) - 5), ]
+
+
+###########Differential Expression Analysis ############################
+
 
 dds <- DESeqDataSetFromMatrix(countData, sampleInfo, design = ~ condition)
 
