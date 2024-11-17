@@ -1,6 +1,6 @@
-BAM_DIR="/home/gerardo/DrosPepper"
+BAM_DIR="/root/DrosPepper/clean/bams"
 # Define the GTF file
-GTF_FILE="/home/gerardo/Drosophila_melanogaster.BDGP6.46.113.gtf/Drosophila_melanogaster.BDGP6.46.113.gtf"
+GTF_FILE="/root/DrosPepper/Drosophila_melanogaster.BDGP6.46.113.gtf"
 
 # Loop through each BAM file in the directory
 for BAM_FILE in "$BAM_DIR"/*.bam; do
@@ -11,7 +11,7 @@ for BAM_FILE in "$BAM_DIR"/*.bam; do
   echo "Processing $BAM_FILE..."
   
   # Run htseq-count
-  htseq-count -f bam -r pos -s no -t gene -i gene_id "$BAM_FILE" "$GTF_FILE" > "$OUTPUT_FILE"
+  htseq-count -f bam -r pos -s no -t exon -i gene_id "$BAM_FILE" "$GTF_FILE" > "$OUTPUT_FILE"
   
   # Check if htseq-count was successful
   if [ $? -eq 0 ]; then
