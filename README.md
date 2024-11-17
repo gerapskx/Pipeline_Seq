@@ -362,6 +362,12 @@ ls -1 *.txt | head -1 | xargs cut -f1 > genes.txt
 paste genes.txt *clean.txt > Dros_matrix.txt
 
 ```
+
+### Merge the .txt files, strategy #2
+
+http://nasqar2.abudhabi.nyu.edu/GeneCountMerger/
+
+
 # R
 -------------
 
@@ -394,7 +400,7 @@ library(clusterProfiler)
 library(org.Dm.eg.db)
 
 
-################Importing data and merging .txt files, strategy 2
+################Importing data and merging .txt files, strategy 3
 
 directory <- "E:/DrosPepper/htseq"
 sampleFiles <- list.files(directory, full.names = TRUE)
