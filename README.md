@@ -310,7 +310,7 @@ https://htseq.readthedocs.io/en/release_0.11.1/count.html
 
 ### single samples
 
-htseq-count -f bam -r pos -s no -t gene -i gene_id bamfile gtffile > outputfile
+htseq-count -f bam -r pos -s no -t exon -i gene_id bamfile gtffile > outputfile
 
 ### multiple samples
 
@@ -334,7 +334,7 @@ for BAM_FILE in "$BAM_DIR"/*.bam; do
   echo "Processing $BAM_FILE..."
   
   # Run htseq-count
-  htseq-count -f bam -r pos -s no -t gene -i gene_id "$BAM_FILE" "$GTF_FILE" > "$OUTPUT_FILE"
+  htseq-count -f bam -r pos -s no -t exon -i gene_id "$BAM_FILE" "$GTF_FILE" > "$OUTPUT_FILE"
   
   # Check if htseq-count was successful
   if [ $? -eq 0 ]; then
