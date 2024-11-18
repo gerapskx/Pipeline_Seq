@@ -389,6 +389,7 @@ install.packages("tidyverse")
 install.packages("readxl")
 install.packages("writexl")
 install.packages(c("csv", "csvread"))
+install.packages("ggforce")
 BiocManager::install("org.Dm.eg.db")
 
 
@@ -400,10 +401,11 @@ library(GOplot)
 library(topGO)
 library(clusterProfiler)
 library(org.Dm.eg.db)
+library(ggforce)
 
 
 
-################Importing data and merging .txt files, strategy 3
+################Importing data and merging .txt files, strategy 2
 
 directory <- "C:/Users/Student/Desktop/GerardoIga/2024/Masters/FALL2024/BiotechI/classRNAseq/11182024/counts"
 
@@ -525,11 +527,13 @@ pheatmap (assay(dds)[top_genes, ], scale = "row", annotation_col = sampleInfo)
 
 rld <- rlog(dds, blind = F)
 plotPCA(rld, intgroup = "condition") + geom_text(aes(label=name),
-                                                   vjust=0.2) + theme_bw()
+                                                   vjust=0.2) + theme_bw() 
+
+plotPCA(rld, intgroup = "condition") + geom_text(aes(label=name),
+                                                 vjust=0.2) + theme_bw() + ggforce::geom_mark_ellipse(alpha = 0.05, expand = 0.00001)
 
 
 #################################################################################
-
 
 
 ```
