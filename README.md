@@ -405,7 +405,7 @@ library(ggforce)
 
 
 
-################Importing data and merging .txt files, strategy 2
+################Importing data and merging .txt files, strategy 3
 
 directory <- "C:/Users/Student/Desktop/GerardoIga/2024/Masters/FALL2024/BiotechI/classRNAseq/11182024/counts"
 
@@ -445,14 +445,35 @@ countData <- do.call(cbind, countData)
 
 colnames(countData) <- sampleNames
 
+#####matrix from methods 1 & 2####################################################################################
+
+Arsenic <- read.csv("Arsenic_Grafting_Counts_RNAseq.csv", row.names = 1)
+
+data <- read.csv("Arsenic_Grafting_ColData.csv", row.names = 1)
+
+head(Arsenic)
+
+head(data)
+
+all(colnames(Arsenic) %in% rownames(data))
+
+all(colnames(Arsenic) == rownames(data))
+
 #filtering
 
 
 countData <- countData[grepl("FBgn", rownames(countData)), ]
 
+
 ###########Differential Expression Analysis ############################
 
 dds <- DESeqDataSetFromMatrix(countData, sampleInfo, design = ~ condition)
+
+#or
+
+dds <-DESeqDataSetFromMatrix(countData = round(Arsenic),
+                       colData = data,
+                       design = ~Group)
 
 dds <- DESeq(dds)
 
