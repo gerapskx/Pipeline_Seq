@@ -34,8 +34,6 @@ sampleFiles <- list.files(directory, full.names = TRUE)
 
 sampleNames <- gsub(".txt$", "", basename(sampleFiles))
 
-
-#Sample information
 sampleInfo <- data.frame(row.names = sampleNames,
                          condition = c("control",
                                        "control",
@@ -45,7 +43,7 @@ sampleInfo <- data.frame(row.names = sampleNames,
                                        "treated"
                                        ))  
 
-# Read counts into a DESeqDataSet
+# Read counts for DESeq
 countData <- lapply(sampleFiles, function(file) {
   read.table(file, header = TRUE, row.names = 1)
 })
@@ -54,7 +52,7 @@ countData <- lapply(sampleFiles, function(file) {
   # Read the file and ensure it's a data frame with row names (genes) and counts (columns)
   data <- read.table(file, header = TRUE, row.names = 1)
   
-  # Check the format of the file and if the data looks correct
+  # Check the format and data
   if (ncol(data) != 1) {
     stop(paste("Unexpected number of columns in file:", file))
   }
@@ -67,6 +65,7 @@ countData <- do.call(cbind, countData)
 
 colnames(countData) <- sampleNames
 
+#filtering
 countData <- countData[1:(nrow(countData) - 5), ]
 
 
@@ -75,6 +74,8 @@ countData <- countData[1:(nrow(countData) - 5), ]
 dds <- DESeqDataSetFromMatrix(countData, sampleInfo, design = ~ condition)
 
 dds <- DESeq(dds)
+
+plotDispEsts(dds)
 
 resultsNames(dds)
 
