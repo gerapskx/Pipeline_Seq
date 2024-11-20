@@ -792,4 +792,9 @@ Pepper_effectsdf_volcano
 
 ![image](https://github.com/user-attachments/assets/b7902171-3f7e-4c58-bb7d-e5078424912e)
 
+# Plot 2 Cooks test
+
+![image](https://github.com/user-attachments/assets/840fa09d-5a50-4e11-9c23-b7eac95cba0b)
+
+
 
