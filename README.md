@@ -371,7 +371,7 @@ http://nasqar2.abudhabi.nyu.edu/GeneCountMerger/
 # R
 -------------
 
-#In this section, we will use the generated counts to understand differentially expressed genes by employing R-based packages such as DESeq2
+### In this section, we will use the generated counts to understand differentially expressed genes by employing R-based packages such as DESeq2
 
 **DESeq2** manual
 
