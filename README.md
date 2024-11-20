@@ -371,11 +371,14 @@ http://nasqar2.abudhabi.nyu.edu/GeneCountMerger/
 # R
 -------------
 
-#In this section, we will use the generated counts to understand differentially expressed genes by employing R-based packages
+#In this section, we will use the generated counts to understand differentially expressed genes by employing R-based packages such as DESeq2
+
+**DESeq2** manual
+
+https://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
 
 
 ```
-
 
 ###################Tools to import/install########################################
 
@@ -481,6 +484,8 @@ dds <- DESeq(dds)
 
 plotDispEsts(dds)
 
+par(mar=c(8,5,2,2))
+boxplot(log10(assays(dds)[["cooks"]]), range=0, las=2)
 
 #nofilteredresults###############################
 
@@ -494,6 +499,8 @@ plotMA(Pepper_effects)
 
 plotMA(Pepper_effects, alpha=0.05, colSig= "pink", colNonSig = "grey", main = "Peppers vs Control")
 
+abline(h=c(-2,2), col="dodgerblue", lwd=2)
+
 #filteredresults############################################
 
 Pepper_effects_filtered <- subset(Pepper_effects, padj < 0.05 & abs(log2FoldChange) > 2 )
@@ -501,6 +508,8 @@ Pepper_effects_filtered <- subset(Pepper_effects, padj < 0.05 & abs(log2FoldChan
 summary(Pepper_effects_filtered)
 
 plotMA(Pepper_effects_filtered)
+abline(h=c(-2,2), col="dodgerblue", lwd=2)
+
 
 Pepper_effects_filtered <- Pepper_effects_filtered[!is.na(Pepper_effects_filtered$padj), ]
 
@@ -533,6 +542,9 @@ Pepper_effects_filtered_up <- subset(annotated_Pepper_effects_filtered, log2Fold
 
 Pepper_effects_filtered_down <- subset(annotated_Pepper_effects_filtered, log2FoldChange < 2)
 
+plotCounts(dds, gene="FBgn0060296", intgroup="condition")
+
+meanSdPlot(assay(vsd))
 
 ###normalizedcounts
 
@@ -587,6 +599,7 @@ plotPCA(rld, intgroup = "condition") + geom_text(aes(label=name),
 
 plotPCA(rld, intgroup = "condition") + geom_text(aes(label=name),
                                                  vjust=0.2) + theme_bw() + ggforce::geom_mark_rect(expand = 0.00001)
+
 
 
 ######################EnrichmentsGO###########################################################
@@ -766,7 +779,6 @@ Pepper_effectsdf_volcano <- ggplot(Pepper_effectsdf, aes(x = log2FoldChange, y =
                                      aes(label = gene_name), size = 3, nudge_x = 0.1)
 
 Pepper_effectsdf_volcano
-
 
 
 ```
