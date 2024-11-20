@@ -788,5 +788,8 @@ Pepper_effectsdf_volcano
 
 
 
+# Plot 1 Dispersions 
+
+![image](https://github.com/user-attachments/assets/b7902171-3f7e-4c58-bb7d-e5078424912e)
 
 
