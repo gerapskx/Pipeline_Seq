@@ -1,0 +1,8 @@
+"","category","subcategory","ID","Description","GeneRatio","BgRatio","pvalue","p.adjust","qvalue","geneID","Count"
+"dme00730","Metabolism","Metabolism of cofactors and vitamins","dme00730","Thiamine metabolism - Drosophila melanogaster (fruit fly)","4/25","21/3613",9.86637737861972e-06,0.00033545683087307,0.00024925584956513,"40372/37539/38632/38633",4
+"dme00790","Metabolism","Metabolism of cofactors and vitamins","dme00790","Folate biosynthesis - Drosophila melanogaster (fruit fly)","4/25","40/3613",0.000137866720768218,0.0023437342530597,0.00174147436759854,"40372/37539/38632/38633",4
+"dme00670","Metabolism","Metabolism of cofactors and vitamins","dme00670","One carbon pool by folate - Drosophila melanogaster (fruit fly)","3/25","25/3613",0.000609023883978136,0.00652349484133195,0.00484717882947266,"41279/42973/33986",3
+"dme00981","Metabolism","Metabolism of terpenoids and polyketides","dme00981","Insect hormone biosynthesis - Drosophila melanogaster (fruit fly)","3/25","27/3613",0.000767469981333171,0.00652349484133195,0.00484717882947266,"45282/32857/38631",3
+"dme01240","Metabolism","Global and overview maps","dme01240","Biosynthesis of cofactors - Drosophila melanogaster (fruit fly)","5/25","140/3613",0.00230816862743435,0.0156955466665536,0.0116623256965104,"40372/41279/37539/38632/38633",5
+"dme00061","Metabolism","Lipid metabolism","dme00061","Fatty acid biosynthesis - Drosophila melanogaster (fruit fly)","2/25","13/3613",0.00342243251847669,0.0193937842713679,0.0144102421830598,"34822/3355111",2
+"dme01212","Metabolism","Global and overview maps","dme01212","Fatty acid metabolism - Drosophila melanogaster (fruit fly)","3/25","54/3613",0.00575346194529571,0.0279453865914363,0.0207643739379093,"34822/3355111/317841",3
