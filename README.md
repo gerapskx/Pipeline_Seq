@@ -854,7 +854,7 @@ Pepper_effectsdf_volcano
 
 # Plot 16 tree plot GO
 
-![image](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f =250x250)
+![image](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f)
 
 
 
