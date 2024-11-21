@@ -839,20 +839,20 @@ Pepper_effectsdf_volcano
 ![image](https://github.com/user-attachments/assets/3c257733-0a64-401e-84f1-6cf22c942f6d)
 
 
-# cnet plot + l2fc
+# Plot 13 cnet plot + l2fc
 
 ![image](https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc)
 
 
-# heatplot + l2fc
+# Plot 14 heatplot + l2fc
 
 ![image](https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f)
 
-# emmaplotGO
+# Plot 15 emmaplotGO
 
 ![image](https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d)
 
-# tree plot GO
+# Plot 16 tree plot GO
 
 ![image](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f)
 
