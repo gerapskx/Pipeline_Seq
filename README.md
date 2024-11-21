@@ -809,6 +809,8 @@ Pepper_effectsdf_volcano
 ### Plot 7: Enhanced volcano
 <img src="https://github.com/user-attachments/assets/f8a81f30-3ffa-4d3b-96ea-55cee61ec5d9" width="400" />
 
+<img src="https://github.com/user-attachments/assets/493ec21c-cf22-40af-b62b-a230925324bc" width="400" />
+
 ### Plot 8: 30 most significant genes
 <img src="https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a" width="400" />
 
