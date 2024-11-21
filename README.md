@@ -828,4 +828,7 @@ Pepper_effectsdf_volcano
 | ![Tree plot GO](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f) |                                     |                                     |                                     |                                     |
 
 
+### Customizable volcano
+
+![image](https://github.com/user-attachments/assets/afcd3663-049f-4e0f-914f-4057c114b237)
 
