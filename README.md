@@ -782,6 +782,7 @@ Pepper_effectsdf_volcano
 
 
 ```
+![image](https://github.com/user-attachments/assets/6e3ba15c-a88d-46ec-b85f-587a65cbe945)
 
 # Results
 ------------------------------------------------
@@ -799,7 +800,7 @@ Pepper_effectsdf_volcano
 
 | **Plot 7**: Enhanced volcano       | **Plot 8**: 30 most significant genes | **Plot 9**: PCA plot               |
 |-----------------------------------|-----------------------------------|---------------------------------------|
-| ![Enhanced volcano](https://github.com/user-attachments/assets/f8a81f30-3ffa-4d3b-96ea-55cee61ec5d9) | ![30 most significant genes](https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a) | ![PCA plot](https://github.com/user-attachments/assets/ca545a1e-cf72-4ce2-a33e-81278d34e59a) |
+| ![Enhanced volcano](https://github.com/user-attachments/assets/6e3ba15c-a88d-46ec-b85f-587a65cbe945) | ![30 most significant genes](https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a) | ![PCA plot](https://github.com/user-attachments/assets/ca545a1e-cf72-4ce2-a33e-81278d34e59a) |
 
 ---
 
@@ -818,11 +819,11 @@ Pepper_effectsdf_volcano
 |---------------------------------------|-------------------------------------|--------------------------------------|-------------------------------------|--------------------------------------|
 | ![Bar plot Down KEGG](https://github.com/user-attachments/assets/2598e776-14ae-4e4d-b5ce-fd2e8251b6de) | ![Dot plot Up KEGG](https://github.com/user-attachments/assets/7a843c45-6f06-4cc1-90ed-afff39f721aa) | ![Dot plot Down KEGG](https://github.com/user-attachments/assets/539f2be9-cf40-4e2c-b6e5-052cca733fa7) | ![Cnet plot Up KEGG](https://github.com/user-attachments/assets/304d3bd0-29df-4492-9181-9dd3a1471e46) | ![Cnet plot Down KEGG](https://github.com/user-attachments/assets/0bb944e1-4ad3-493e-b5b5-37be9bbb184e) |
 
-| **Plot 20**: GO cnet plot + l2fc      | **Plot 21**: KEGG cnet plot + l2fc   | **Plot 22**: Heatplot + l2fc         | **Plot 23**: Emmaplot GO cluster      | **Plot 25**: Tree plot KEGG            |
+| **Plot 20**: GO cnet plot + l2fc      | **Plot 21**: KEGG cnet plot + l2fc   | **Plot 22**: Heatplot + l2fc         | **Plot 23**: Emmaplot GO cluster      | **Plot 24**: Tree plot KEGG            |
 |---------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
 | ![GO cnet plot + l2fc](https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc) | ![KEGG cnet plot + l2fc](https://github.com/user-attachments/assets/24207a9a-bcaa-4a77-a801-68806a5c7317) | ![Heatplot + l2fc](https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f) | ![Emmaplot GO cluster](https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d) | ![Tree plot KEGG](https://github.com/user-attachments/assets/04f12f74-4402-41c6-bd55-757620729475) |
 
-| **Plot 24**: Tree plot GO            |                                      |                                      |                                      |                                     |
+| **Plot 25**: Tree plot GO            |                                      |                                      |                                      |                                     |
 |---------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
 | ![Tree plot GO](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f) |                                     |                                     |                                     |                                     |
 
