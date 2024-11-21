@@ -788,7 +788,6 @@ Pepper_effectsdf_volcano
 
 # DEGs Plots
 
-## Plot Grid Layout
 
 | **Plot 1**: Dispersions            | **Plot 2**: Cooks test             | **Plot 3**: MA plot without filtering  |
 |-----------------------------------|-----------------------------------|---------------------------------------|
@@ -806,53 +805,22 @@ Pepper_effectsdf_volcano
 
 # Enrichments
 
-### Plot 10: Bar plot UP ontologies
-<img src="https://github.com/user-attachments/assets/b3f69ae3-fa31-48a0-81a3-369ec7c65fa3" width="400" />
 
-### Plot 11: Bar plot Down ontologies
-<img src="https://github.com/user-attachments/assets/4f99c00e-fab2-4119-bd84-1a1eba986fb4" width="400" />
 
-### Plot 12: Dot plot Up ontologies
-<img src="https://github.com/user-attachments/assets/56601a63-78ba-4f0d-a578-408454dc813e" width="400" />
+| **Plot 10**: Bar plot UP ontologies     | **Plot 11**: Bar plot Down ontologies  | **Plot 12**: Dot plot Up ontologies   | **Plot 13**: Dot plot Down ontologies | **Plot 14**: Bar plot UP KEGG       |
+|----------------------------------------|--------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------|
+| ![Bar plot UP ontologies](https://github.com/user-attachments/assets/b3f69ae3-fa31-48a0-81a3-369ec7c65fa3) | ![Bar plot Down ontologies](https://github.com/user-attachments/assets/4f99c00e-fab2-4119-bd84-1a1eba986fb4) | ![Dot plot Up ontologies](https://github.com/user-attachments/assets/56601a63-78ba-4f0d-a578-408454dc813e) | ![Dot plot Down ontologies](https://github.com/user-attachments/assets/37cb1911-fbeb-48f5-b54c-af20702f56b2) | ![Bar plot UP KEGG](https://github.com/user-attachments/assets/d8590bda-0afb-4921-bca9-a0401ab3f81a) |
 
-### Plot 13: Dot plot Down ontologies
-<img src="https://github.com/user-attachments/assets/37cb1911-fbeb-48f5-b54c-af20702f56b2" width="400" />
+| **Plot 15**: Bar plot Down KEGG       | **Plot 16**: Dot plot Up KEGG        | **Plot 17**: Dot plot Down KEGG       | **Plot 18**: Cnet plot Up KEGG        | **Plot 19**: Cnet plot Down KEGG      |
+|---------------------------------------|-------------------------------------|--------------------------------------|-------------------------------------|--------------------------------------|
+| ![Bar plot Down KEGG](https://github.com/user-attachments/assets/2598e776-14ae-4e4d-b5ce-fd2e8251b6de) | ![Dot plot Up KEGG](https://github.com/user-attachments/assets/7a843c45-6f06-4cc1-90ed-afff39f721aa) | ![Dot plot Down KEGG](https://github.com/user-attachments/assets/539f2be9-cf40-4e2c-b6e5-052cca733fa7) | ![Cnet plot Up KEGG](https://github.com/user-attachments/assets/304d3bd0-29df-4492-9181-9dd3a1471e46) | ![Cnet plot Down KEGG](https://github.com/user-attachments/assets/0bb944e1-4ad3-493e-b5b5-37be9bbb184e) |
 
-### Plot 14: Bar plot UP KEGG
-<img src="https://github.com/user-attachments/assets/d8590bda-0afb-4921-bca9-a0401ab3f81a" width="400" />
+| **Plot 20**: GO cnet plot + l2fc      | **Plot 21**: KEGG cnet plot + l2fc   | **Plot 22**: Heatplot + l2fc         | **Plot 23**: Emmaplot GO cluster      | **Plot 24**: Tree plot GO            |
+|---------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
+| ![GO cnet plot + l2fc](https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc) | ![KEGG cnet plot + l2fc](https://github.com/user-attachments/assets/24207a9a-bcaa-4a77-a801-68806a5c7317) | ![Heatplot + l2fc](https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f) | ![Emmaplot GO cluster](https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d) | ![Tree plot GO](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f) |
 
-### Plot 15: Bar plot Down KEGG
-<img src="https://github.com/user-attachments/assets/2598e776-14ae-4e4d-b5ce-fd2e8251b6de" width="400" />
-
-### Plot 16: Dot plot Up KEGG
-<img src="https://github.com/user-attachments/assets/7a843c45-6f06-4cc1-90ed-afff39f721aa" width="400" />
-
-### Plot 17: Dot plot Down KEGG
-<img src="https://github.com/user-attachments/assets/539f2be9-cf40-4e2c-b6e5-052cca733fa7" width="400" />
-
-### Plot 18: Cnet plot Up KEGG
-<img src="https://github.com/user-attachments/assets/304d3bd0-29df-4492-9181-9dd3a1471e46" width="400" />
-
-### Plot 19: Cnet plot Down KEGG
-<img src="https://github.com/user-attachments/assets/0bb944e1-4ad3-493e-b5b5-37be9bbb184e" width="400" />
-
-### Plot 20: GO cnet plot + l2fc
-<img src="https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc" width="400" />
-
-### Plot 21: KEGG cnet plot + l2fc
-<img src="https://github.com/user-attachments/assets/24207a9a-bcaa-4a77-a801-68806a5c7317" width="400" />
-
-### Plot 22: Heatplot + l2fc
-<img src="https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f" width="400" />
-
-### Plot 23: Emmaplot GO cluster
-<img src="https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d" width="400" />
-
-### Plot 24: Tree plot GO
-<img src="https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f" width="400" />
-
-### Plot 25: Tree plot KEGG
-<img src="https://github.com/user-attachments/assets/04f12f74-4402-41c6-bd55-757620729475" width="400" />
-
+| **Plot 25**: Tree plot KEGG           |                                      |                                      |                                      |                                     |
+|---------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
+| ![Tree plot KEGG](https://github.com/user-attachments/assets/04f12f74-4402-41c6-bd55-757620729475) |                                     |                                     |                                     |                                     |
 
 
