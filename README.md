@@ -823,10 +823,6 @@ Pepper_effectsdf_volcano
 |---------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
 | ![GO cnet plot + l2fc](https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc) | ![KEGG cnet plot + l2fc](https://github.com/user-attachments/assets/24207a9a-bcaa-4a77-a801-68806a5c7317) | ![Heatplot + l2fc](https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f) | ![Emmaplot GO cluster](https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d) | ![Tree plot KEGG](https://github.com/user-attachments/assets/04f12f74-4402-41c6-bd55-757620729475) |
 
-| **Plot 25**: Tree plot GO            |                                      |                                      |                                      |                                     |
-|---------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| ![Tree plot GO](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f) |                                     |                                     |                                     |                                     |
-
 
 ### Customizable volcano
 
