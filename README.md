@@ -858,13 +858,9 @@ Pepper_effectsdf_volcano
 
 
 
-<img src="[https://user-images.githubusercontent.com/link-to-your-image.png](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f)" width="200" />
 
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f)
+{ width=50% }
 
 
 
