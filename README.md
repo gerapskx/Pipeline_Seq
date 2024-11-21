@@ -786,79 +786,86 @@ Pepper_effectsdf_volcano
 # Results
 ------------------------------------------------
 
+# DEGs
 
+### Plot 1: Dispersions 
+<img src="https://github.com/user-attachments/assets/b7902171-3f7e-4c58-bb7d-e5078424912e" width="400" />
 
-### Plot 1 Dispersions 
+### Plot 2: Cooks test
+<img src="https://github.com/user-attachments/assets/840fa09d-5a50-4e11-9c23-b7eac95cba0b" width="400" />
 
-![image](https://github.com/user-attachments/assets/b7902171-3f7e-4c58-bb7d-e5078424912e)
+### Plot 3: MA plot without filtering
+<img src="https://github.com/user-attachments/assets/a83a5d4a-2275-412b-9f3f-7bc28b3c3491" width="400" />
 
-### Plot 2 Cooks test
+### Plot 4: MA plot 0.05 modified
+<img src="https://github.com/user-attachments/assets/57d499d0-8338-4525-9502-2a8030cddcfa" width="400" />
 
-![image](https://github.com/user-attachments/assets/840fa09d-5a50-4e11-9c23-b7eac95cba0b)
+### Plot 5: MA plot filtered
+<img src="https://github.com/user-attachments/assets/b38bf441-4c0b-400b-9907-7ce236b5f0dc" width="400" />
 
-### Plot 3 MA plot without filtering
+### Plot 6: Counts for a gene
+<img src="https://github.com/user-attachments/assets/72d7096d-4994-4cb9-8df6-653c11d13e8b" width="400" />
 
-![image](https://github.com/user-attachments/assets/a83a5d4a-2275-412b-9f3f-7bc28b3c3491)
+### Plot 7: Enhanced volcano
+<img src="https://github.com/user-attachments/assets/f8a81f30-3ffa-4d3b-96ea-55cee61ec5d9" width="400" />
 
-### Plot 4 MA plot 0.05 modified
+### Plot 8: 30 most significant genes
+<img src="https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a" width="400" />
 
-![image](https://github.com/user-attachments/assets/57d499d0-8338-4525-9502-2a8030cddcfa)
+### Plot 9: PCA plot 
+<img src="https://github.com/user-attachments/assets/ca545a1e-cf72-4ce2-a33e-81278d34e59a" width="400" />
 
-### Plot 5 MA plot filtered 
+---
 
-![image](https://github.com/user-attachments/assets/b38bf441-4c0b-400b-9907-7ce236b5f0dc)
+# Enrichments
 
-### Plot 6 counts for a gene
+### Plot 10: Bar plot UP ontologies
+<img src="https://github.com/user-attachments/assets/b3f69ae3-fa31-48a0-81a3-369ec7c65fa3" width="400" />
 
-![image](https://github.com/user-attachments/assets/72d7096d-4994-4cb9-8df6-653c11d13e8b)
+### Plot 11: Bar plot Down ontologies
+<img src="https://github.com/user-attachments/assets/4f99c00e-fab2-4119-bd84-1a1eba986fb4" width="400" />
 
-### Plot 7 Enhanced volcano
+### Plot 12: Dot plot Up ontologies
+<img src="https://github.com/user-attachments/assets/56601a63-78ba-4f0d-a578-408454dc813e" width="400" />
 
-![image](https://github.com/user-attachments/assets/f8a81f30-3ffa-4d3b-96ea-55cee61ec5d9)
+### Plot 13: Dot plot Down ontologies
+<img src="https://github.com/user-attachments/assets/37cb1911-fbeb-48f5-b54c-af20702f56b2" width="400" />
 
+### Plot 14: Bar plot UP KEGG
+<img src="https://github.com/user-attachments/assets/d8590bda-0afb-4921-bca9-a0401ab3f81a" width="400" />
 
-### Plot 8 30 most significant genes
+### Plot 15: Bar plot Down KEGG
+<img src="https://github.com/user-attachments/assets/2598e776-14ae-4e4d-b5ce-fd2e8251b6de" width="400" />
 
-![image](https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a)
+### Plot 16: Dot plot Up KEGG
+<img src="https://github.com/user-attachments/assets/7a843c45-6f06-4cc1-90ed-afff39f721aa" width="400" />
 
+### Plot 17: Dot plot Down KEGG
+<img src="https://github.com/user-attachments/assets/539f2be9-cf40-4e2c-b6e5-052cca733fa7" width="400" />
 
-### Plot 9 PCA plot 
+### Plot 18: Cnet plot Up KEGG
+<img src="https://github.com/user-attachments/assets/304d3bd0-29df-4492-9181-9dd3a1471e46" width="400" />
 
-![image](https://github.com/user-attachments/assets/ca545a1e-cf72-4ce2-a33e-81278d34e59a)
+### Plot 19: Cnet plot Down KEGG
+<img src="https://github.com/user-attachments/assets/0bb944e1-4ad3-493e-b5b5-37be9bbb184e" width="400" />
 
-### Plot 10 Bar plot UP ontologies
+### Plot 20: GO cnet plot + l2fc
+<img src="https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc" width="400" />
 
-![image](https://github.com/user-attachments/assets/b3f69ae3-fa31-48a0-81a3-369ec7c65fa3)
+### Plot 21: KEGG cnet plot + l2fc
+<img src="https://github.com/user-attachments/assets/24207a9a-bcaa-4a77-a801-68806a5c7317" width="400" />
 
-### Plot 11 Dot plot Up ontologies
+### Plot 22: Heatplot + l2fc
+<img src="https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f" width="400" />
 
-![image](https://github.com/user-attachments/assets/56601a63-78ba-4f0d-a578-408454dc813e)
+### Plot 23: Emmaplot GO cluster
+<img src="https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d" width="400" />
 
-### Plot 12 cnet plot
-
-![image](https://github.com/user-attachments/assets/3c257733-0a64-401e-84f1-6cf22c942f6d)
-
-
-### Plot 13 cnet plot + l2fc
-
-![image](https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc)
-
-
-### Plot 14 heatplot + l2fc
-
-![image](https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f)
-
-### Plot 15 emmaplotGO
-
-![image](https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d)
-
-### Plot 16 tree plot GO
-
-![image](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f)
-
-
+### Plot 24: Tree plot GO
 <img src="https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f" width="400" />
 
+### Plot 25: Tree plot KEGG
+<img src="https://github.com/user-attachments/assets/04f12f74-4402-41c6-bd55-757620729475" width="400" />
 
 
 
