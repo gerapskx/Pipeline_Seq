@@ -812,29 +812,29 @@ Pepper_effectsdf_volcano
 
 ![image](https://github.com/user-attachments/assets/72d7096d-4994-4cb9-8df6-653c11d13e8b)
 
-# Enhanced volcano
+# Plot 7 Enhanced volcano
 
 ![image](https://github.com/user-attachments/assets/f8a81f30-3ffa-4d3b-96ea-55cee61ec5d9)
 
 
-# 30 most significant genes
+# Plot 8 30 most significant genes
 
 ![image](https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a)
 
 
-# PCA plot 
+# Plot 9 PCA plot 
 
 ![image](https://github.com/user-attachments/assets/ca545a1e-cf72-4ce2-a33e-81278d34e59a)
 
-# Bar plot UP ontologies
+# Plot 10 Bar plot UP ontologies
 
 ![image](https://github.com/user-attachments/assets/b3f69ae3-fa31-48a0-81a3-369ec7c65fa3)
 
-# Dot plot Up ontologies
+# Plot 11 Dot plot Up ontologies
 
 ![image](https://github.com/user-attachments/assets/56601a63-78ba-4f0d-a578-408454dc813e)
 
-# cnet plot
+# Plot 12 cnet plot
 
 ![image](https://github.com/user-attachments/assets/3c257733-0a64-401e-84f1-6cf22c942f6d)
 
