@@ -782,7 +782,6 @@ Pepper_effectsdf_volcano
 
 
 ```
-![image](https://github.com/user-attachments/assets/6e3ba15c-a88d-46ec-b85f-587a65cbe945)
 
 # Results
 ------------------------------------------------
