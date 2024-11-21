@@ -808,7 +808,6 @@ Pepper_effectsdf_volcano
 
 # Enrichments
 
-## Plot Grid Layout
 
 | **Plot 10**: Bar plot UP ontologies     | **Plot 11**: Bar plot Down ontologies  | **Plot 12**: Dot plot Up ontologies   | **Plot 13**: Dot plot Down ontologies | **Plot 14**: Bar plot UP KEGG       |
 |----------------------------------------|--------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------|
