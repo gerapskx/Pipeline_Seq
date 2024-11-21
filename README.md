@@ -806,6 +806,9 @@ Pepper_effectsdf_volcano
 # Enrichments
 
 
+# Enrichments
+
+## Plot Grid Layout
 
 | **Plot 10**: Bar plot UP ontologies     | **Plot 11**: Bar plot Down ontologies  | **Plot 12**: Dot plot Up ontologies   | **Plot 13**: Dot plot Down ontologies | **Plot 14**: Bar plot UP KEGG       |
 |----------------------------------------|--------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------|
@@ -815,12 +818,13 @@ Pepper_effectsdf_volcano
 |---------------------------------------|-------------------------------------|--------------------------------------|-------------------------------------|--------------------------------------|
 | ![Bar plot Down KEGG](https://github.com/user-attachments/assets/2598e776-14ae-4e4d-b5ce-fd2e8251b6de) | ![Dot plot Up KEGG](https://github.com/user-attachments/assets/7a843c45-6f06-4cc1-90ed-afff39f721aa) | ![Dot plot Down KEGG](https://github.com/user-attachments/assets/539f2be9-cf40-4e2c-b6e5-052cca733fa7) | ![Cnet plot Up KEGG](https://github.com/user-attachments/assets/304d3bd0-29df-4492-9181-9dd3a1471e46) | ![Cnet plot Down KEGG](https://github.com/user-attachments/assets/0bb944e1-4ad3-493e-b5b5-37be9bbb184e) |
 
-| **Plot 20**: GO cnet plot + l2fc      | **Plot 21**: KEGG cnet plot + l2fc   | **Plot 22**: Heatplot + l2fc         | **Plot 23**: Emmaplot GO cluster      | **Plot 24**: Tree plot GO            |
+| **Plot 20**: GO cnet plot + l2fc      | **Plot 21**: KEGG cnet plot + l2fc   | **Plot 22**: Heatplot + l2fc         | **Plot 23**: Emmaplot GO cluster      | **Plot 25**: Tree plot KEGG            |
 |---------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| ![GO cnet plot + l2fc](https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc) | ![KEGG cnet plot + l2fc](https://github.com/user-attachments/assets/24207a9a-bcaa-4a77-a801-68806a5c7317) | ![Heatplot + l2fc](https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f) | ![Emmaplot GO cluster](https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d) | ![Tree plot GO](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f) |
+| ![GO cnet plot + l2fc](https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc) | ![KEGG cnet plot + l2fc](https://github.com/user-attachments/assets/24207a9a-bcaa-4a77-a801-68806a5c7317) | ![Heatplot + l2fc](https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f) | ![Emmaplot GO cluster](https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d) | ![Tree plot KEGG](https://github.com/user-attachments/assets/04f12f74-4402-41c6-bd55-757620729475) |
 
-| **Plot 25**: Tree plot KEGG           |                                      |                                      |                                      |                                     |
+| **Plot 24**: Tree plot GO            |                                      |                                      |                                      |                                     |
 |---------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| ![Tree plot KEGG](https://github.com/user-attachments/assets/04f12f74-4402-41c6-bd55-757620729475) |                                     |                                     |                                     |                                     |
+| ![Tree plot GO](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f) |                                     |                                     |                                     |                                     |
+
 
 
