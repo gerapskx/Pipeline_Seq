@@ -796,5 +796,77 @@ Pepper_effectsdf_volcano
 
 ![image](https://github.com/user-attachments/assets/840fa09d-5a50-4e11-9c23-b7eac95cba0b)
 
+# Plot 3 MA plot without filtering
+
+![image](https://github.com/user-attachments/assets/a83a5d4a-2275-412b-9f3f-7bc28b3c3491)
+
+# Plot 4 MA plot 0.05 modified
+
+![image](https://github.com/user-attachments/assets/57d499d0-8338-4525-9502-2a8030cddcfa)
+
+# Plot 5 MA plot filtered 
+
+![image](https://github.com/user-attachments/assets/b38bf441-4c0b-400b-9907-7ce236b5f0dc)
+
+# Plot 6 counts for a gene
+
+![image](https://github.com/user-attachments/assets/72d7096d-4994-4cb9-8df6-653c11d13e8b)
+
+# Enhanced volcano
+
+![image](https://github.com/user-attachments/assets/f8a81f30-3ffa-4d3b-96ea-55cee61ec5d9)
+
+
+# 30 most significant genes
+
+![image](https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a)
+
+
+# PCA plot 
+
+![image](https://github.com/user-attachments/assets/ca545a1e-cf72-4ce2-a33e-81278d34e59a)
+
+# Bar plot UP ontologies
+
+![image](https://github.com/user-attachments/assets/b3f69ae3-fa31-48a0-81a3-369ec7c65fa3)
+
+# Dot plot Up ontologies
+
+![image](https://github.com/user-attachments/assets/56601a63-78ba-4f0d-a578-408454dc813e)
+
+# cnet plot
+
+![image](https://github.com/user-attachments/assets/3c257733-0a64-401e-84f1-6cf22c942f6d)
+
+
+# cnet plot + l2fc
+
+![image](https://github.com/user-attachments/assets/a5629a76-04be-4399-a2b6-c4cc241f04fc)
+
+
+# heatplot + l2fc
+
+![image](https://github.com/user-attachments/assets/68893e22-5e69-4bab-be19-0bf01a3c8a7f)
+
+# emmaplotGO
+
+![image](https://github.com/user-attachments/assets/f9057ba4-07d4-44e7-8ade-c1f6830e832d)
+
+# tree plot GO
+
+![image](https://github.com/user-attachments/assets/6dd91343-19f6-4b5c-9368-e645f924943f)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
