@@ -786,36 +786,21 @@ Pepper_effectsdf_volcano
 # Results
 ------------------------------------------------
 
-# DEGs
+# DEGs Plots
 
-### Plot 1: Dispersions 
-<img src="https://github.com/user-attachments/assets/b7902171-3f7e-4c58-bb7d-e5078424912e" width="400" />
+## Plot Grid Layout
 
-### Plot 2: Cooks test
-<img src="https://github.com/user-attachments/assets/840fa09d-5a50-4e11-9c23-b7eac95cba0b" width="400" />
+| **Plot 1**: Dispersions            | **Plot 2**: Cooks test             | **Plot 3**: MA plot without filtering  |
+|-----------------------------------|-----------------------------------|---------------------------------------|
+| ![Dispersions](https://github.com/user-attachments/assets/b7902171-3f7e-4c58-bb7d-e5078424912e) | ![Cooks test](https://github.com/user-attachments/assets/840fa09d-5a50-4e11-9c23-b7eac95cba0b) | ![MA plot without filtering](https://github.com/user-attachments/assets/a83a5d4a-2275-412b-9f3f-7bc28b3c3491) |
 
-### Plot 3: MA plot without filtering
-<img src="https://github.com/user-attachments/assets/a83a5d4a-2275-412b-9f3f-7bc28b3c3491" width="400" />
+| **Plot 4**: MA plot 0.05 modified  | **Plot 5**: MA plot filtered      | **Plot 6**: Counts for a gene         |
+|-----------------------------------|-----------------------------------|---------------------------------------|
+| ![MA plot 0.05 modified](https://github.com/user-attachments/assets/57d499d0-8338-4525-9502-2a8030cddcfa) | ![MA plot filtered](https://github.com/user-attachments/assets/b38bf441-4c0b-400b-9907-7ce236b5f0dc) | ![Counts for a gene](https://github.com/user-attachments/assets/72d7096d-4994-4cb9-8df6-653c11d13e8b) |
 
-### Plot 4: MA plot 0.05 modified
-<img src="https://github.com/user-attachments/assets/57d499d0-8338-4525-9502-2a8030cddcfa" width="400" />
-
-### Plot 5: MA plot filtered
-<img src="https://github.com/user-attachments/assets/b38bf441-4c0b-400b-9907-7ce236b5f0dc" width="400" />
-
-### Plot 6: Counts for a gene
-<img src="https://github.com/user-attachments/assets/72d7096d-4994-4cb9-8df6-653c11d13e8b" width="400" />
-
-### Plot 7: Enhanced volcano
-<img src="https://github.com/user-attachments/assets/f8a81f30-3ffa-4d3b-96ea-55cee61ec5d9" width="400" />
-
-<img src="https://github.com/user-attachments/assets/493ec21c-cf22-40af-b62b-a230925324bc" width="400" />
-
-### Plot 8: 30 most significant genes
-<img src="https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a" width="400" />
-
-### Plot 9: PCA plot 
-<img src="https://github.com/user-attachments/assets/ca545a1e-cf72-4ce2-a33e-81278d34e59a" width="400" />
+| **Plot 7**: Enhanced volcano       | **Plot 8**: 30 most significant genes | **Plot 9**: PCA plot               |
+|-----------------------------------|-----------------------------------|---------------------------------------|
+| ![Enhanced volcano](https://github.com/user-attachments/assets/f8a81f30-3ffa-4d3b-96ea-55cee61ec5d9) | ![30 most significant genes](https://github.com/user-attachments/assets/d15571f4-21cc-4e55-a6c6-6ce76941cd8a) | ![PCA plot](https://github.com/user-attachments/assets/ca545a1e-cf72-4ce2-a33e-81278d34e59a) |
 
 ---
 
