@@ -95,7 +95,7 @@ fastq-dump --outdir fastq --gzip --skip-technical --readids --read-filter pass -
 -a python script will iterate through our samples (file is attached in this repository)
 
 ```
-wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/main/Fastq_download.py
+wget https://raw.githubusercontent.com/gerapskx/Pipeline_Seq/main/fastq_download.py
 ```
 ###script
 ```
