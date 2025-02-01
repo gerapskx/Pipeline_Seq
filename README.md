@@ -1,7 +1,9 @@
 
 # Pipeline Bulk RNA-Seq
-Step by Step Guide for NGS data analysis from bulk RNA-sequencing experiments
- 
+Step by Step Guide for NGS data analysis from bulk RNA-sequencing experiments.
+
+I taught the module on NGS analyses for the Biotechniques I master's course.
+
 Objectives
 ------------
 
